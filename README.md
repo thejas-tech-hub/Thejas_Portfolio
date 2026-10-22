@@ -4,7 +4,7 @@ A high-performance, dark-mode engineering portfolio showcasing production AI/ML 
 
 - **Developer**: Thejas J (B.E. AI & ML, A.J. Institute of Engineering and Technology, Mangalore)
 - **Target Repository**: [https://github.com/thejas-tech-hub/Thejas_Portfolio.git](https://github.com/thejas-tech-hub/Thejas_Portfolio.git)
-- **Live**:thejas-portfolio-9te3anzbu-thejas8.vercel.app
+- **Live**: [thejas-portfolio-9te3anzbu-thejas8.vercel.app](https://thejas-portfolio-navy.vercel.app/)
 - **Profile / Connect**: [GitHub](https://github.com/thejas-tech-hub) · [LinkedIn](https://linkedin.com/in/thejas-j-b2695433a) · [LeetCode](https://leetcode.com/u/thejasbejja)
 
 ---
