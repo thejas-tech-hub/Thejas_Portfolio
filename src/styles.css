@@ -1,0 +1,129 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-violet: var(--violet);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.145 0.025 260);
+  --foreground: oklch(0.95 0.01 250);
+  --card: oklch(0.185 0.03 258);
+  --card-foreground: oklch(0.95 0.01 250);
+  --popover: oklch(0.185 0.03 258);
+  --popover-foreground: oklch(0.95 0.01 250);
+  --primary: oklch(0.82 0.13 205);
+  --primary-foreground: oklch(0.16 0.03 255);
+  --secondary: oklch(0.23 0.035 258);
+  --secondary-foreground: oklch(0.92 0.01 250);
+  --muted: oklch(0.22 0.03 258);
+  --muted-foreground: oklch(0.7 0.03 255);
+  --accent: oklch(0.25 0.04 258);
+  --accent-foreground: oklch(0.95 0.01 250);
+  --violet: oklch(0.72 0.14 295);
+  --destructive: oklch(0.65 0.2 25);
+  --border: oklch(0.3 0.035 258);
+  --input: oklch(0.3 0.035 258);
+  --ring: oklch(0.82 0.13 205);
+  --grid-line: oklch(0.82 0.13 205 / 5%);
+  --glow:
+    radial-gradient(60% 50% at 70% 40%, oklch(0.82 0.13 205 / 12%), transparent 70%),
+    radial-gradient(40% 40% at 85% 70%, oklch(0.72 0.14 295 / 10%), transparent 70%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@utility tech-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+@utility hero-glow {
+  background: var(--glow);
+}
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+@utility fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
